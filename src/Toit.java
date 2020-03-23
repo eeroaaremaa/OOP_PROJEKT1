@@ -32,7 +32,7 @@ public class Toit {
     }
 
     public boolean isGluteeniVaba() {
-        return gluteeniVaba;
+            return gluteeniVaba;
     }
 
     public void setGluteeniVaba(boolean gluteeniVaba) {
@@ -58,19 +58,11 @@ public class Toit {
     }
 
 
-    //Siin toimub failist, mis sisaldab toitude infot lugemine
-    //Loeteakse terve fail korraga.
-    public void failistLugemine(String failiPath) throws FileNotFoundException {
-        File toiduInfo = new File(failiPath);
-        Scanner scanner = new Scanner(toiduInfo);
 
-        int reaLoendur = 0;
-        while(scanner.hasNextLine()){
-            String rida = scanner.nextLine();
-            //Siin splitib rea vastavalt
-            //for loop failist sisu lugemiseks
-            // i (lugeja) = reast tekitatud massiiv
-            reaLoendur++;
-        }
-    }
 }
+
+
+/*
+
+[toit1, toit2, toit3, .....]
+ */
