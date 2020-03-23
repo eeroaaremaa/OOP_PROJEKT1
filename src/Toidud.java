@@ -30,21 +30,42 @@ public class Toidud {
 
     //Siin toimub failist, mis sisaldab toitude infot lugemine
     //Loeteakse terve fail korraga.
-    public void failistLugemine(String failiPath) throws FileNotFoundException {
+    public void failistLugemine(String failiPath) throws Exception {
         File toiduInfo = new File(failiPath);
-        Scanner scanner = new Scanner(toiduInfo);
+        try{
+            Scanner scanner = new Scanner(toiduInfo);
 
-        int reaLoendur = 0;
-        while(scanner.hasNextLine()){
-            String rida = scanner.nextLine();
-            //Siin splitib rea vastavalt
-            //for loop failist sisu lugemiseks
-            // i (lugeja) = reast tekitatud massiiv
+            int reaLoendur = 0;
+            while(scanner.hasNextLine()){
+                String rida = scanner.nextLine();
 
-            Toidud.add(new Toit("Vegan hakklihakase ja mine munni", true,true,true));
+                String[] rea_info = rida.split(", ");
+                try{
+                    if(rea_info[1].equals("true") || rea_info[1].equals("false")){
 
-            reaLoendur++;
+                        Toidud.add(new Toit(rea_info[0], leiaVäärtus(rea_info[1]),
+                                leiaVäärtus(rea_info[2]), leiaVäärtus(rea_info[3])));
+                    }
+                } catch (Exception e) {
+                    System.out.println(rea_info[0]);
+                }
+                //Siin splitib rea vastavalt
+                //for loop failist sisu lugemiseks
+                // i (lugeja) = reast tekitatud massiiv
+
+                reaLoendur++;
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
+
+
+    }
+
+    public boolean leiaVäärtus(String sõne){
+        if(sõne.equals("true"))
+            return true;
+        return false;
     }
 
 
