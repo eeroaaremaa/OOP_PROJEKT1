@@ -24,9 +24,9 @@ public class Toidud {
                 '}';
     }
 
-    public void test(){
+    /*public void test(){
         Toidud.add(new Toit("Vegan hakklihakase ja kartul", true,true,true));
-    }
+    }*/
 
     //Siin toimub failist, mis sisaldab toitude infot lugemine
     //Loeteakse terve fail korraga.
@@ -47,7 +47,7 @@ public class Toidud {
                                 leiaVäärtus(rea_info[2]), leiaVäärtus(rea_info[3])));
                     }
                 } catch (Exception e) {
-                    System.out.println(rea_info[0]);
+                    //System.out.println(rea_info[0]);
                 }
                 //Siin splitib rea vastavalt
                 //for loop failist sisu lugemiseks
@@ -71,5 +71,9 @@ public class Toidud {
 
     public void lisaToit(String nimi){
         this.Toidud.add(new Toit(nimi, true, true, true));
+    }
+
+    public int getPikkus(){
+        return Toidud.size();
     }
 }
