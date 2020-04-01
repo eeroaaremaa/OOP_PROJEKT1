@@ -34,11 +34,8 @@ public class Main {
         Toidud toidud = new Toidud();
         //toidud.test();
 
-        toidud.failistLugemine("C:/toidud.txt");
 
-        System.out.println(toidud.toString());
-
-        System.out.println(toidud.getPikkus());
+    static String juhuslikGenereerija(Toidud toidud){
+        return toidud.getToidud().get((int) (Math.random() * toidud.getPikkus()) +1).toString();
     }
-
 }
