@@ -1,19 +1,18 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Toit {
     private String toiduNimi;
     private boolean vegan;
     private boolean gluteeniVaba;
     private boolean laktoosiVaba;
 
+    //Konstruktor.
     public Toit(String toiduNimi, boolean vegan, boolean gluteeniVaba, boolean laktoosiVaba) {
         this.toiduNimi = toiduNimi;
         this.vegan = vegan;
         this.gluteeniVaba = gluteeniVaba;
         this.laktoosiVaba = laktoosiVaba;
     }
+
+    //Get ja set meetodid.
 
     public String getToiduNimi() {
         return toiduNimi;
@@ -47,6 +46,7 @@ public class Toit {
         this.laktoosiVaba = laktoosiVaba;
     }
 
+    //toString.
     @Override
     public String toString() {
         String a = "";
@@ -65,9 +65,3 @@ public class Toit {
 
 
 }
-
-
-/*
-
-[toit1, toit2, toit3, .....]
- */
