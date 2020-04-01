@@ -49,12 +49,18 @@ public class Toit {
 
     @Override
     public String toString() {
-        return "Toit{" +
-                "toiduNimi='" + toiduNimi + '\'' +
-                ", vegan=" + vegan +
-                ", gluteeniVaba=" + gluteeniVaba +
-                ", laktoosiVaba=" + laktoosiVaba +
-                '}';
+        String a = "";
+        String b = "";
+        String c = "";
+
+
+        if(vegan) a =  " vegan";
+
+        else if(gluteeniVaba) b = " gluteenivaba";
+
+        else if(laktoosiVaba) c = " laktoosivaba";
+
+        return toiduNimi + "," + a + b + c;
     }
 
 

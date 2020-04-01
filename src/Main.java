@@ -3,14 +3,17 @@ public class Main {
         Toidud toidud = new Toidud();
         toidud.test();
 
-        System.out.println(toidud.toString());
+        //System.out.println(toidud.toString());
 
-        toidud.lisaToit("testtresttest");
+        toidud.failistLugemine("toidud.txt");
 
-        System.out.println(toidud.toString());
+        //System.out.println(toidud.toString());
 
-        toidud.failistLugemine("C:/toidud.txt");
+        System.out.println(juhuslikGenereerija(toidud));
+    }
 
-        System.out.println(toidud.toString());
+
+    static String juhuslikGenereerija(Toidud toidud){
+        return toidud.getToidud().get((int) (Math.random() * toidud.getPikkus()) +1).toString();
     }
 }

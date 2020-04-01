@@ -47,7 +47,7 @@ public class Toidud {
                                 leiaVäärtus(rea_info[2]), leiaVäärtus(rea_info[3])));
                     }
                 } catch (Exception e) {
-                    System.out.println(rea_info[0]);
+                   // System.out.println(rea_info[0]);
                 }
                 //Siin splitib rea vastavalt
                 //for loop failist sisu lugemiseks
@@ -66,6 +66,10 @@ public class Toidud {
         if(sõne.equals("true"))
             return true;
         return false;
+    }
+
+    public int getPikkus(){
+        return Toidud.size()-1;
     }
 
 
