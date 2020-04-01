@@ -43,8 +43,16 @@ public class Toidud {
                 try{
                     if(rea_info[1].equals("true") || rea_info[1].equals("false")){
 
-                        Toidud.add(new Toit(rea_info[0], leiaVäärtus(rea_info[1]),
-                                leiaVäärtus(rea_info[2]), leiaVäärtus(rea_info[3])));
+                        if((Main.piirangudBoolean[0].equals("true") && rea_info[1].equals("false")) ||
+                        Main.piirangudBoolean[1].equals("true") && rea_info[2].equals("false") ||
+                        Main.piirangudBoolean[2].equals("true") && rea_info[3].equals("false")){
+
+                        }else{
+                            Toidud.add(new Toit(rea_info[0], leiaVäärtus(rea_info[1]),
+                                    leiaVäärtus(rea_info[2]), leiaVäärtus(rea_info[3])));
+                        }
+
+
                     }
                 } catch (Exception e) {
                    // System.out.println(rea_info[0]);
@@ -77,7 +85,4 @@ public class Toidud {
         this.Toidud.add(new Toit(nimi, true, true, true));
     }
 
-    public int getPikkus(){
-        return Toidud.size();
-    }
 }
