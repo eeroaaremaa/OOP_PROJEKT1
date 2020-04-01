@@ -32,7 +32,7 @@ public class Toit {
     }
 
     public boolean isGluteeniVaba() {
-            return gluteeniVaba;
+        return gluteeniVaba;
     }
 
     public void setGluteeniVaba(boolean gluteeniVaba) {
@@ -54,15 +54,14 @@ public class Toit {
         String c = "";
 
 
-        if(vegan) a =  " vegan";
+        if (vegan) a = " vegan";
 
-        else if(gluteeniVaba) b = " gluteenivaba";
+        else if (gluteeniVaba) b = " gluteenivaba";
 
-        else if(laktoosiVaba) c = " laktoosivaba";
+        else if (laktoosiVaba) c = " laktoosivaba";
 
         return toiduNimi + "," + a + b + c;
     }
-
 
 
 }

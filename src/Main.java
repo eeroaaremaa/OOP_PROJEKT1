@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static String[] piirangudBoolean = {"false","false","false"};
+    public static String[] piirangudBoolean = {"false", "false", "false"};
 
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
@@ -17,11 +17,10 @@ public class Main {
             String valik = scanner.next();
             if (valik.equals("V") || valik.equals("G") || valik.equals("L") && !piirangud.contains(valik))
                 piirangud.add(valik);
-            else if(valik.equals("X")){
+            else if (valik.equals("X")) {
                 valitud = true;
                 break;
-            }
-            else if (piirangud.contains(valik)) {
+            } else if (piirangud.contains(valik)) {
                 System.out.println("Oled selle piirangu juba sisestanud");
             } else {
                 System.out.println("Palun sisesta sobiv varinat");
@@ -40,15 +39,15 @@ public class Main {
 
         //V, G, L
         for (int i = 0; i < 3; i++) {
-            try{
-                if (piirangud.get(i).equals("G")){
+            try {
+                if (piirangud.get(i).equals("G")) {
                     piirangudBoolean[1] = "true";
-                }else if(piirangud.get(i).equals("V")){
+                } else if (piirangud.get(i).equals("V")) {
                     piirangudBoolean[0] = "true";
-                }else if(piirangud.get(i).equals("L")){
+                } else if (piirangud.get(i).equals("L")) {
                     piirangudBoolean[2] = "true";
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
             }
         }
 
@@ -56,23 +55,60 @@ public class Main {
         toidud.failistLugemine("toidud.txt");
         System.out.println(toidud.getToidud());
 
-        while (true){
+        while (true) {
             System.out.println("Järgmise toidu nägemiseks sisesta J, toidu lisamiseks sisesta +, programmist lahkumiseks sisesta X");
             String valik = scanner.next();
-            if(valik.equals("J")){
+            if (valik.equals("J")) {
                 System.out.println(juhuslikGenereerija(toidud));
-            }else if(valik.equals("+")){
-                
+            } else if (valik.equals("+")) {
+                System.out.println("Toidu lisamiseks sisesta toit järgmise vormistusega:");
+                String[] sisestamiseleA = new String[4];
 
-            }else if (valik.equals("X")){
+                System.out.println("Toidu nimi: ");
+                String sisestamisele = scanner.next();
+                sisestamiseleA[0] = sisestamisele;
+
+                System.out.println("Kas toit on vegan (sisesta true või false): ");
+                sisestamisele = scanner.next();
+                if (sisestamisele.equals("true") || sisestamisele.equals("false")) {
+                    sisestamiseleA[1] = sisestamisele;
+                } else {
+                    System.out.println("Sisestasid valesti, palun alusta uuest.");
+                    continue;
+                }
+
+                System.out.println("Kas toit on gluteenivaba (sisesta true või false): ");
+                sisestamisele = scanner.next();
+                if (sisestamisele.equals("true") || sisestamisele.equals("false")) {
+                    sisestamiseleA[2] = sisestamisele;
+                } else {
+                    System.out.println("Sisestasid valesti, palun alusta uuest.");
+                    continue;
+                }
+
+                System.out.println("Kas toit on laktoosivaba (sisesta true või false): ");
+                sisestamisele = scanner.next();
+                if (sisestamisele.equals("true") || sisestamisele.equals("false")) {
+                    sisestamiseleA[3] = sisestamisele;
+                } else {
+                    System.out.println("Sisestasid valesti, palun alusta uuest.");
+                    continue;
+                }
+
+                System.out.println(sisestamiseleA[0] + "  " + sisestamiseleA[1] + "  " + sisestamiseleA[2] + "  " + sisestamiseleA[3]);
+                if (Toidud.sobivus(sisestamiseleA)) {
+                    toidud.lisaToit(sisestamiseleA[0], Toidud.leiaVäärtus(sisestamiseleA[1]),
+                            Toidud.leiaVäärtus(sisestamiseleA[2]), Toidud.leiaVäärtus(sisestamiseleA[3]));
+                }
+                System.out.println(toidud.getToidud());
+            } else if (valik.equals("X")) {
                 System.exit(0);
             }
         }
 
     }
 
-
-    static String juhuslikGenereerija(Toidud toidud){
-        return toidud.getToidud().get((int) (Math.random() * toidud.getPikkus()) +1).toString();
+    static String juhuslikGenereerija(Toidud toidud) {
+        return toidud.getToidud().get((int) (Math.random() * toidud.getPikkus()) + 1).toString();
     }
 }
