@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -95,10 +96,18 @@ public class Main {
                     continue;
                 }
 
+                String faili = sisestamiseleA[0] + ", " + sisestamiseleA[1] + ", " + sisestamiseleA[2] + ", " + sisestamiseleA[3];
+
+                File file = new File("toidud.txt");
+                FileWriter fileWriter = new FileWriter(file,true);
+                fileWriter.write("\n" + faili);
+                fileWriter.close();
+
                 System.out.println(sisestamiseleA[0] + "  " + sisestamiseleA[1] + "  " + sisestamiseleA[2] + "  " + sisestamiseleA[3]);
                 if (Toidud.sobivus(sisestamiseleA)) {
                     toidud.lisaToit(sisestamiseleA[0], Toidud.leiaVäärtus(sisestamiseleA[1]),
                             Toidud.leiaVäärtus(sisestamiseleA[2]), Toidud.leiaVäärtus(sisestamiseleA[3]));
+                    continue;
                 }
                 System.out.println(toidud.getToidud());
             } else if (valik.equals("X")) {
