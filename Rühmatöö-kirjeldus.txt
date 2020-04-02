@@ -1,0 +1,56 @@
+Autorid: Tauno Tamm, Eero Ääremaa
+GitHub: https://github.com/eeroaaremaa/OOP_PROJEKT1
+
+	Tegime programmi, mille eesmärk on anda kasutajale teada, milliseid toite võib ta tarbida arvestades 
+tema allergiaid. Alguses küsib programm kasutajalt, milliste allergeenidega toite soovib ta enda menüüs vältida,
+seejärel kasutaja sisestab programmi enda allergeenid, mille vastu ta on allergiline ning programm
+väljastab talle juhusliku toidu, mida ta võiks tarbida. Hetkel on vaadeldavateks allergeenideks 
+laktoos, gluteen ning samuti, et kas toode on vegan. Eelnevalt on tekstifaili sisestatud mõned toidud ning nende
+järele ka informatsioon neis sisalduvate allergeenide kohta. Programm annab võimaluse ka kasutajal 
+sisestada enda poolt soovitud toite koos nendes sisalduvate allergeenidega ning programm salvestab 
+sisestatud toidu tekstifaili. Programm loeb tekstifailist kõik andmed ArrayListi ning hiljem siis
+väljastab kasutajale meetodi Math.random() abiga suvalise sobiva toidu listist. Lisaks on programmi algusesse
+pandud ka kasutajasõbralik menüü, mis suhtleb kasutajaga ning selle abiga saab kasutaja sooritada endale
+sobivaid tegevusi. Nendeks on siis juhusliku toidu väljastamine või uue toidu lisamine.
+
+Programm koosneb kolmest klassist:
+
+1) Main -	klass, mille peamiseks eesmärgiks on kasutajaga suhtlemine ning talle vajaliku informatsiooni
+		edastamine ning vajadusel ka uute andmede tekstifaili kirjutamine.
+
+Oluliseks meetodiks on juhuslikGenereerija, mis genereerib suvalise indeksi ning selle sama indeksiga sobiv
+toit väljastatakse kasutajale.
+	 
+
+2) Toidud -	klass, mille eesmärgiks on lugeda tekstifailist sisse andmed ning paigutada need listi,
+		kus oleks võimalik neid hiljem taas kasutada.
+
+Olulisi meetod on failistLugemine, mis loeb tekstifailist kõik andmed ning paigutab need listi.
+Ning samuti oluline meetod on sobivus, mis kontollib, kas toit sobib kasutaja seatud piirangutega.
+
+
+3) Toit -	klass mingi kindla toidu jaoks, kus määratakse ära tema allergeenid.
+
+Koosneb peamiselt get ja set meetoditest.
+
+
+	Projekti tegime jupp jupi haaval läbimõeldult, mitte viimasel õhtul kõike kokku pannes. Selleks saime
+üle päeva tunnikeseks kokku interneti teel ning panime paika päevase tegevusplaani ning asusime selleks
+päevaks seatud eesmärkide täitmise juurde. Hiljem analüüsisime tehtut. Harrastasime paarisprogrammeerimist,
+selleks kasutasime messengeri ekraani jagamist ning vastavalt päevale programmeeris üks ning teine 
+mõtles kaasa. See kindlasti määras hästi ära selle, et mõlema osapoole panus antud projekti oleks 
+võimalikult ühtlane.
+	Etapiliselt - kõigepealt panime koos paika idee ning see oli tõenäoliselt kõige raskem osa, sest
+oli tarvis teha selline programm, kus oleks võimalik kõik eelnevalt õpitu praktiseerida. Seejärel tegime
+üldise lahinguplaani - mitu klassi, mis on peamised meetodid, mida programm kasutajalt küsib jne.
+Alguses tegime valmis nö alamklassid ning viimasena asusime alles peaklassi kallale, sest nii oli valmis
+kirjutatud vajalikud "töö" klassid, et saaks hakata tegutsema suurema pildi kallal. Klassides valmis kirjutatut 
+testisime vahetult nendes samades klassides, et oleks kohe teada, kas ja kus täpselt mingi viga on, et pärast ei 
+peaks hakkama viga taga ajama suures süsteemis. Kõige rohkem aega võttis klass Main, sest seal oli vaja 
+teised klassid omavahel klappima saada ning samuti tuli juurde lisada võimalus, kus programm kasutajaga suhtleb.
+Orienteeruvalt 8 tundi. Sellest ajast suurem osa läks projekti idee mõtlemisele ning klassi Main koostamisele.
+	Projekti kirjutades ei tundnud puudust oskustest, kuna kõike oli võimalik lisaks uurida ka interneti
+avarustest. Hinnang oma töö lõpptulemusele on kindlasti positiivne, sest sedavõrd kasulik asi on kasutajale
+lihtsaks kasutamiseks tehtud. Ma usun, et kogu projekt on üdini positiivne, kuid väga tore oleks kindlasti, 
+kui sellele projektile tulevikus juurde teha ka graafiline väljund, et seda saaksid kasutada ka inimesed, 
+kes ei tunne programmeerimiskeeli.
