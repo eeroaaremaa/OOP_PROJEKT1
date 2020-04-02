@@ -12,6 +12,10 @@ public class Toidud {
         Toidud = toidud;
     }
 
+    //Konstruktor
+    public Toidud() {
+    }
+
     //Get meetod.
     public ArrayList<Toit> getToidud() {
         return Toidud;
